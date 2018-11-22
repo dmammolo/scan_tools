@@ -544,11 +544,11 @@ void LaserScanMatcher::processScan(LDP& curr_ldp_scan, const ros::Time& time)
       {
         pose_with_covariance_msg->covariance = boost::assign::list_of
           (gsl_matrix_get(output_.cov_x_m, 0, 0)) (0)  (0)  (0)  (0)  (0)
-          (0)  (gsl_matrix_get(output_.cov_x_m, 0, 1)) (0)  (0)  (0)  (0)
+          (0)  (gsl_matrix_get(output_.cov_x_m, 1, 1)) (0)  (0)  (0)  (0)
           (0)  (0)  (static_cast<double>(position_covariance_[2])) (0)  (0)  (0)
           (0)  (0)  (0)  (static_cast<double>(orientation_covariance_[0])) (0)  (0)
           (0)  (0)  (0)  (0)  (static_cast<double>(orientation_covariance_[1])) (0)
-          (0)  (0)  (0)  (0)  (0)  (gsl_matrix_get(output_.cov_x_m, 0, 2));
+          (0)  (0)  (0)  (0)  (0)  (gsl_matrix_get(output_.cov_x_m, 2, 2));
       }
       else
       {
@@ -578,11 +578,11 @@ void LaserScanMatcher::processScan(LDP& curr_ldp_scan, const ros::Time& time)
       {
         pose_with_covariance_stamped_msg->pose.covariance = boost::assign::list_of
           (gsl_matrix_get(output_.cov_x_m, 0, 0)) (0)  (0)  (0)  (0)  (0)
-          (0)  (gsl_matrix_get(output_.cov_x_m, 0, 1)) (0)  (0)  (0)  (0)
+          (0)  (gsl_matrix_get(output_.cov_x_m, 1, 1)) (0)  (0)  (0)  (0)
           (0)  (0)  (static_cast<double>(position_covariance_[2])) (0)  (0)  (0)
           (0)  (0)  (0)  (static_cast<double>(orientation_covariance_[0])) (0)  (0)
           (0)  (0)  (0)  (0)  (static_cast<double>(orientation_covariance_[1])) (0)
-          (0)  (0)  (0)  (0)  (0)  (gsl_matrix_get(output_.cov_x_m, 0, 2));
+          (0)  (0)  (0)  (0)  (0)  (gsl_matrix_get(output_.cov_x_m, 2, 2));
       }
       else
       {
